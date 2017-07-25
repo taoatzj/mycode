@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.ssm.test.dao.ScheduleJobDao">
+
+<resultMap id="BaseResultMap" type="cn.ssm.test.model.ScheduleJobEntity" >
+    <id column="job_id" property="jobId" />
+    <result column="bean_name" property="beanName" />
+    <result column="method_name" property="methodName" />
+    <result column="params" property="params"  />
+    <result column="cron_expression" property="cronExpression" />
+    <result column="status" property="status" />
+    <result column="remark" property="remark" />
+    <result column="create_time" property="createTime" />
+</resultMap>
+
+<sql id="Base_Column_List" >
+   	job_id, bean_name, method_name, params, cron_expression, status, remark, create_time
+</sql>
+
+	<select id="getAll" resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List" />
+		from schedule_job
+	</select>
+	
+<insert id="insertSelective" parameterType="cn.ssm.test.model.ScheduleJobEntity" useGeneratedKeys="true" keyProperty="jobId">
+ insert into schedule_job (job_id, bean_name, method_name, 
+      params, cron_expression, status, 
+      remark, create_time)
+    values (#{jobId}, #{beanName}, #{methodName}, 
+      #{params}, #{cronExpression}, #{status}, 
+      #{remark}, #{createTime})
+</insert>
+	
+<select id="selectByPrimaryKey" resultMap="BaseResultMap"
+		parameterType="java.lang.Long">
+		select
+		<include refid="Base_Column_List" />
+		from schedule_job
+		where job_id = #{jobId,jdbcType=BIGINT}
+	</select>
+	
+	<update id="updateByPrimaryKeySelective" parameterType="cn.ssm.test.model.ScheduleJobEntity" >
+    update schedule_job
+    <set >
+      <if test="beanName != null" >
+        bean_name = #{beanName,jdbcType=VARCHAR},
+      </if>
+      <if test="methodName != null" >
+        method_name = #{methodName,jdbcType=VARCHAR},
+      </if>
+      <if test="params != null" >
+        params = #{params,jdbcType=VARCHAR},
+      </if>
+      <if test="cronExpression != null" >
+        cron_expression = #{cronExpression,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=TINYINT},
+      </if>
+      <if test="remark != null" >
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where job_id = #{jobId,jdbcType=BIGINT}
+  </update>
+	
+	<delete id="deleteScheduleJob" parameterType="long" >
+			delete from schedule_job where job_id =#{jobId}
+	</delete>
+	
+	
+</mapper>
