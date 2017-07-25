@@ -1,0 +1,12 @@
+
+1、新建一个maven web project;
+
+2、在pom.xml文件中添加相应的依赖包；
+
+3、新建一个HelloController请求控制类；
+
+4、编写index.jsp页面；
+
+5、编写启动类App.java
+
+6、启动应用程序进行代码测试
