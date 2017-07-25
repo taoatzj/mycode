@@ -1,4 +1,4 @@
-package com.isesol.linker.config;
+package com.mycode.linker.config;
 
 import com.github.pagehelper.PageHelper;
 import org.springframework.context.annotation.Bean;
@@ -6,9 +6,6 @@ import org.springframework.context.annotation.Configuration;
 
 import java.util.Properties;
 
-/**
- * Created by isesol on 2017/7/21.
- */
 
 @Configuration
 public class MyBatisConfiguration {

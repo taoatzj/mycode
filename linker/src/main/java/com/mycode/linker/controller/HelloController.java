@@ -1,4 +1,4 @@
-package com.isesol.linker.controller;
+package com.mycode.linker.controller;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
@@ -7,9 +7,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-/**
- * Created by isesol on 2017/7/7.
- */
 
 @Controller
 public class HelloController {

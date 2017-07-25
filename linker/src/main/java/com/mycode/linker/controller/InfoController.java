@@ -1,17 +1,14 @@
-package com.isesol.linker.controller;
+package com.mycode.linker.controller;
 
 import com.github.pagehelper.PageHelper;
-import com.isesol.linker.domain.Info;
-import com.isesol.linker.service.InfoService;
+import com.mycode.linker.domain.Info;
+import com.mycode.linker.service.InfoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-/**
- * Created by isesol on 2017/7/21.
- */
 
 @RestController
 public class InfoController {

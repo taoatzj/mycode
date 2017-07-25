@@ -1,15 +1,13 @@
-package com.isesol.linker.service;
+package com.mycode.linker.service;
 
-import com.isesol.linker.domain.Info;
-import com.isesol.linker.mapper.InfoMapper;
+import com.mycode.linker.domain.Info;
+import com.mycode.linker.mapper.InfoMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-/**
- * Created by isesol on 2017/7/21.
- */
+
 
 @Service
 public class InfoService {

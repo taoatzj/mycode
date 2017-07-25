@@ -1,4 +1,4 @@
-package com.isesol.linker.domain;
+package com.mycode.linker.domain;
 
 import lombok.Data;
 
