@@ -1,0 +1,4 @@
+org\keydong\ker\entity\City.class
+org\keydong\ker\entity\Country.class
+org\keydong\ker\entity\UserInfo.class
+org\keydong\ker\entity\BaseEntity.class
