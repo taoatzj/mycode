@@ -293,7 +293,8 @@ int main(int argc, char** argv)
 		usage();
 	
 	topic = argv[1];
-	printf("ts123\n");
+	printf("ts124\n");
+	fflush(stdout);
 	if (strchr(topic, '#') || strchr(topic, '+'))
 		opts.showtopics = 1;
 	if (opts.showtopics)

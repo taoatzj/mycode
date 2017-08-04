@@ -35,7 +35,7 @@
 									<listOptionValue builtIn="false" value="paho-mqtt3a"/>
 								</option>
 								<option id="gnu.c.link.option.paths.437762604" name="Library search path (-L)" superClass="gnu.c.link.option.paths" useByScannerDiscovery="false" valueType="libPaths">
-									<listOptionValue builtIn="false" value="&quot;C:\Users\isesol\cdt\pahoSample\Debug&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;C:\mycode\pahoSample\Debug&quot;"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.c.linker.input.636747381" superClass="cdt.managedbuild.tool.gnu.c.linker.input">
 									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
