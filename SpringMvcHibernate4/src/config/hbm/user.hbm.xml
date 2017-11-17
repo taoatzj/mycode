@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.fqq.vo.User" table="t_user">
+        <id name="id">
+            <column name="pk_id" />
+            <generator class="identity"></generator>
+        </id>
+        
+        <property name="userName" type="java.lang.String">
+            <column name="f_username" />
+        </property>
+
+        <property name="password" type="java.lang.String">
+            <column name="f_password" />
+        </property>
+        
+        <property name="nickName" type="java.lang.String">
+            <column name="f_nickname" />
+        </property>
+        
+        <property name="level" type="java.lang.Integer">
+            <column name="f_level" />
+        </property>
+    </class>
+</hibernate-mapping>
