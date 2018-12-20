@@ -20,11 +20,12 @@ public class PahoProduce {
     private MqttClient sampleClient;
     private String topic        = "MQTT Examples";
     private String content      = "Message from MqttPublishSample";
+    private int qos             = 2;
 
     @PostConstruct
     public void defaultMQProducer() {
 
-        int qos             = 2;
+
         String broker       = "tcp://47.105.94.241:1883";
         String clientId     = "JavaSample";
         String  userPass    =  "mqtt828282";
@@ -36,16 +37,13 @@ public class PahoProduce {
             connOpts.setCleanSession(true);
             connOpts.setUserName("mqttuser");
             connOpts.setPassword(userPass.toCharArray());
+
             System.out.println("Connecting to broker: "+broker);
             sampleClient.connect(connOpts);
             System.out.println("Connected");
-            System.out.println("Publishing message: "+content);
-            MqttMessage message = new MqttMessage(content.getBytes());
-            message.setQos(qos);
-            sampleClient.publish(topic, message);
-            System.out.println("Message published");
+
             //sampleClient.disconnect();
-            System.out.println("Disconnected");
+            //System.out.println("Disconnected");
             //System.exit(0);
         } catch(MqttException me) {
             System.out.println("reason "+me.getReasonCode());
@@ -56,5 +54,24 @@ public class PahoProduce {
             me.printStackTrace();
         }
         System.out.println("-------->:paho producer启动了");
+    }
+
+    public void send(){
+        try {
+            content = Long.toString(System.currentTimeMillis());
+        System.out.println("Publishing message: "+content);
+        MqttMessage message = new MqttMessage(content.getBytes());
+        message.setQos(qos);
+        message.setRetained(true);
+        sampleClient.publish(topic, message);
+        System.out.println("Message published");
+        } catch(MqttException me) {
+            System.out.println("reason "+me.getReasonCode());
+            System.out.println("msg "+me.getMessage());
+            System.out.println("loc "+me.getLocalizedMessage());
+            System.out.println("cause "+me.getCause());
+            System.out.println("excep "+me);
+            me.printStackTrace();
+        }
     }
 }
