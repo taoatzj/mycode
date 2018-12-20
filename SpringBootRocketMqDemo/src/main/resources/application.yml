@@ -1,3 +1,4 @@
+
 apache:
   rocketmq:
     consumer:
@@ -5,3 +6,5 @@ apache:
     producer:
       producerGroup: Xiaour
     namesrvAddr: 192.168.2.5:9876
+server:
+  port: 48080
